@@ -1,11 +1,30 @@
 .ps-carousel-desktop__header {
-    height: 200%;
+  height: 200%;
 }
 
 .ps-carousel-content__desktop {
-    height: 300px;
-    color: #fff;
-    line-height: 160px;
-    text-align: center;
-    background: #364d79;
+  height: 300px;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+  line-height: 160px;
+  text-align: center;
+  background: #364d79;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+  font-size: 25px;
 }

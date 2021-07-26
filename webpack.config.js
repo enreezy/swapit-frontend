@@ -1,4 +1,5 @@
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: "./src/index.js",
@@ -16,7 +17,7 @@ module.exports = {
     alias: {
       components: path.resolve(__dirname, "src/components/"),
       assets: path.resolve(__dirname, "src/assets/"),
-      config: path.resolve(__dirname, "src/config/"),
+      config: path.resolve(__dirname, "src/config/")
     },
   },
   module: {
@@ -40,6 +41,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new Dotenv({
+      systemvars: true
+    })
+  ],
   devtool: "cheap-module-eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, "public"),
