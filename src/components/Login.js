@@ -1,44 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "assets/scss/login.scss";
 
-
 export default function Login() {
-    return (
-        <div id="loginform">
-            <FormHeader title="Login" />
-                <Form />
-            <OtherMethods />
-      </div>
-    )
+  return (
+    <div id="loginform">
+      <FormHeader title="Login" />
+      <Form />
+      <OtherMethods />
+    </div>
+  );
 }
 
-const FormHeader = props => (
-    <h2 id="headerTitle">{props.title}</h2>
+const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
+
+const Form = (props) => (
+  <div>
+    <FormInput
+      description="Username"
+      placeholder="Enter your username"
+      type="text"
+    />
+    <FormInput
+      description="Password"
+      placeholder="Enter your password"
+      type="password"
+    />
+    <FormButton title="Log in" />
+  </div>
 );
 
-
-const Form = props => (
-   <div>
-     <FormInput description="Username" placeholder="Enter your username" type="text" />
-     <FormInput description="Password" placeholder="Enter your password" type="password"/>
-     <FormButton title="Log in"/>
-   </div>
-);
-
-const FormButton = props => (
+const FormButton = (props) => (
   <div id="button" class="row">
     <button>{props.title}</button>
   </div>
 );
 
-const FormInput = props => (
+const FormInput = (props) => (
   <div class="row">
     <label>{props.description}</label>
-    <input type={props.type} placeholder={props.placeholder}/>
-  </div>  
+    <input type={props.type} placeholder={props.placeholder} />
+  </div>
 );
 
-const OtherMethods = props => (
+const OtherMethods = (props) => (
   <div id="alternativeLogin">
     <label>Or sign in with:</label>
     <div id="iconGroup">
@@ -49,14 +53,8 @@ const OtherMethods = props => (
   </div>
 );
 
-const Facebook = props => (
-  <a href="#" id="facebookIcon"></a>
-);
+const Facebook = (props) => <a href="#" id="facebookIcon"></a>;
 
-const Twitter = props => (
-  <a href="#" id="twitterIcon"></a>
-);
+const Twitter = (props) => <a href="#" id="twitterIcon"></a>;
 
-const Google = props => (
-  <a href="#" id="googleIcon"></a>
-);
+const Google = (props) => <a href="#" id="googleIcon"></a>;
