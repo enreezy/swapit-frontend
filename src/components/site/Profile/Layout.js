@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
 import {
   UserOutlined,
   LaptopOutlined,
@@ -9,11 +9,10 @@ import "assets/scss/adminLayout.scss";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
-import CreateProject from "./Forms/CreateProduct";
-import CreateCategory from "./Forms/CreateCategory";
+import About from "./About";
 import Product from "./Product";
 
-export default function AdminLayoutContent() {
+export default function ProfileLayout() {
   return (
     <Layout>
       <Header className="header">
@@ -62,16 +61,14 @@ export default function AdminLayoutContent() {
             <Breadcrumb.Item>Products</Breadcrumb.Item>
             <Breadcrumb.Item>Create Product</Breadcrumb.Item>
           </Breadcrumb>
-          <Content
-            className="site-layout-background"
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-            }}
-          >
-            <CreateCategory />
-          </Content>
+          <Row>
+            <Col span={4}>
+              <About />
+            </Col>
+            <Col span={20}>
+              <Product />
+            </Col>
+          </Row>
         </Layout>
       </Layout>
     </Layout>
