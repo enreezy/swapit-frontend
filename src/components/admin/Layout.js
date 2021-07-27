@@ -10,6 +10,7 @@ import "assets/scss/adminLayout.scss";
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 import CreateProject from "./Forms/CreateProduct";
+import Product from "./Product";
 
 export default function AdminLayoutContent() {
   return (
@@ -68,7 +69,7 @@ export default function AdminLayoutContent() {
               minHeight: 280,
             }}
           >
-            <CreateProject />
+            <Product />
           </Content>
         </Layout>
       </Layout>
